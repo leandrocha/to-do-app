@@ -1,0 +1,28 @@
+.ContainerNotas {
+  display: grid;
+  gap: 1%;
+  grid-template-columns: 39% 60%;
+  grid-template-rows: 1fr auto;
+  height: 40%;
+  width: 80%;
+}
+
+.ContainerNotasAtivas, .ContainerNotasExcluidas{
+  display: flex;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  flex-direction: column;
+}
+
+.ContainerNotasExcluidasButton {
+  background-color: grey;
+  color: white;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  align-self: end;
+}
+
+.ContainerNotasExcluidasButton:hover {
+  background-color: rgb(178, 177, 177);
+  cursor: pointer;
+}

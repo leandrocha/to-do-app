@@ -1,0 +1,15 @@
+.HeaderApp{
+  display: flex;
+  width: 80%;
+  align-items: baseline;
+  border-bottom-left-radius: 10px;
+  border-bottom: rgba(145, 144, 144, 0.411) 0.5px solid;
+  border-left: rgba(145, 144, 144, 0.411) 0.5px solid;
+  padding: 0 0 1rem 1rem;
+}
+
+.HeaderAppTitulo {
+  font-weight: bold;
+  font-size: 3rem;
+  margin-right: 1rem;
+}

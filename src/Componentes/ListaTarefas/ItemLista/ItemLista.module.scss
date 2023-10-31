@@ -1,0 +1,40 @@
+.itemLista{
+    background-color: #FDE5D4;
+    border-radius: 5px;
+    color: #445D48;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: none;
+}
+
+.itemLista tr th {
+    font-weight: bold;
+    border-bottom: solid 0.2px #8faf95;
+}
+
+.itemLista tr td {    
+  vertical-align: center;
+}
+
+.itemLista tr td, tr th {
+    padding: 0.5rem;
+}
+
+.itemListaTituloDescricao{
+    grid-column: span 3;
+}
+
+.checkbox {
+  height: 1rem;
+  width: 1rem;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
