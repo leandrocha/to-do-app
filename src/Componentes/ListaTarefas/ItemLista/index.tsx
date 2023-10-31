@@ -13,7 +13,14 @@ interface Props {
     recuperaTarefa: (tarefa: ITarefas) => void
 }
 
-export default function ItemLista({tarefa, excluiTarefa, completaTarefa, recuperaTarefa}: Props){
+export default function ItemLista({tarefa, excluiTarefa, completaTarefa, recuperaTarefa}: Props){    
+
+    function formataData(data: string) {
+        var [ano, mes, dia] = data.split('-');
+        const dataFormatada = `${dia}/${mes}/${ano}`;
+        return dataFormatada;
+    }
+
     return <>    
     <table className={style.itemLista}> 
         <tr>
@@ -21,8 +28,8 @@ export default function ItemLista({tarefa, excluiTarefa, completaTarefa, recuper
             <th className={style.itemListaTitulo}>Descrição</th>
         </tr>
         <tr>
-            <td>{ tarefa.data }</td>
-            <td>{ tarefa.descricao }</td>
+            <td>{ formataData(tarefa.data) }</td>
+            <td className={style.itemListaTituloDescricao}>{ tarefa.descricao }</td>
             <td onClick={() => completaTarefa(tarefa)}>
             {
                 !tarefa.completado ? 
