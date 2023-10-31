@@ -48,18 +48,18 @@ export default function Nota({setTarefas, showAlert} : Props){
         return true
     }
 
-    return <>
-    <form className={style.nota}>
-        <input className={style.notaText} placeholder="Digite aqui sua nota" maxLength={255} value={notas.descricao} 
-        onChange={e => setNotas({...notas, descricao: e.target.value})}></input>
-        <input className={style.notaData} type="date" value={notas.data} 
-        onChange={e => setNotas({...notas, data: e.target.value})}/>
-        <select className={style.notaDrop} id="urgencia" value={notas.urgencia} 
-        onChange={e => setNotas({...notas, urgencia: e.target.value})}>
-            <option value="c">Comum</option>
-            <option value="u">Urgente</option>
-        </select>
-    </form>
-    <Botao onClick={addNota} children="Adicionar Nota" />    
-    </>
+    return <div className={style.notaContainer}>
+        <form className={style.nota}>
+            <textarea className={style.notaText} placeholder="Digite aqui sua nota" maxLength={255} value={notas.descricao}
+            onChange={e => setNotas({...notas, descricao: e.target.value})}></textarea >
+            <input className={style.notaData} type="date" value={notas.data} 
+            onChange={e => setNotas({...notas, data: e.target.value})}/>
+            <select className={style.notaDrop} id="urgencia" value={notas.urgencia} 
+            onChange={e => setNotas({...notas, urgencia: e.target.value})}>
+                <option value="c">Comum</option>
+                <option value="u">Urgente</option>
+            </select>
+        </form>
+        <Botao onClick={addNota} children="Adicionar Nota" />    
+    </div>
 }
