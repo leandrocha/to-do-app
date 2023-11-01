@@ -5,7 +5,7 @@
     transform: translate(-50%, -50%);
     width: 30%;
     background-color: #FDE5D4;
-    border: 1px solid #000;
+    border: 1px solid #001524;;
     border-radius: 10px;
     color: #445D48;
     padding: 1rem;
@@ -22,7 +22,15 @@
     padding-bottom: 5px;
 }
 
-.modalDescription{
-    margin-top: 1rem;
+.modalDetails{
+   width: 100%; 
+}
+
+.modalDetailsTitle{    
+    margin: 8px 0 5px 0;
+    font-weight: bold;
+}
+
+.modalDetailsDescription{
     word-wrap: break-word;
 }
