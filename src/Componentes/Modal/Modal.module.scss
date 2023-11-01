@@ -1,0 +1,28 @@
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    background-color: #FDE5D4;
+    border: 1px solid #000;
+    border-radius: 10px;
+    color: #445D48;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    min-height: 20%;
+}
+
+.modalTitle{
+    font-weight: bold;
+    border-bottom: solid 0.2px #8faf95;
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.modalDescription{
+    margin-top: 1rem;
+    word-wrap: break-word;
+}
