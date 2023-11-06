@@ -8,6 +8,7 @@ import RestoreIcon from '@mui/icons-material/Restore';
 import { useState } from 'react';
 import Modals from '../../Modal/Index';
 import formataData from '../../../Utils/Formatacao/formataData';
+import ArticleIcon from '@mui/icons-material/Article';
 
 interface Props {
     tarefa: ITarefas
@@ -24,7 +25,7 @@ export default function ItemLista({tarefa, excluiTarefa, completaTarefa, recuper
     };
 
     return <>    
-        <table className={style.itemLista} onClick={openModal}> 
+        <table className={style.itemLista}> 
             <tr>
                 <th className={style.itemListaTitulo}>Data Final</th>
                 <th className={style.itemListaTitulo}>Descrição</th>
@@ -32,26 +33,25 @@ export default function ItemLista({tarefa, excluiTarefa, completaTarefa, recuper
             <tr>
                 <td>{ formataData(tarefa.data) }</td>
                 <td className={style.itemListaTituloDescricao}>{ tarefa.descricao }</td>
+                <td><ArticleIcon onClick={openModal} className={style.iconButton}/></td>
                 <td onClick={() => completaTarefa(tarefa)}>
                 {
                     !tarefa.completado ? 
-                    <UnpublishedIcon/> : 
-                    <CheckCircleIcon color="primary"/>
+                    <UnpublishedIcon className={style.iconButton}/> : 
+                    <CheckCircleIcon color="primary" className={style.iconButton}/>
                 }
                 </td>
                 {tarefa.excluido ? 
                 <td onClick={() => recuperaTarefa(tarefa)}>
-                    <RestoreIcon></RestoreIcon>
+                    <RestoreIcon className={style.iconButton}></RestoreIcon>
                 </td> 
                 :
                 <td onClick={() => excluiTarefa(tarefa)}>
-                    <IconButton aria-label="delete" size="small">
-                        <DeleteIcon />
-                    </IconButton>
+                    <DeleteIcon className={style.iconButton}/>
                 </td>
                 }
             </tr>
         </table>
-        <Modals isModalOpen={isModalOpen}  openModal={openModal} tarefa={tarefa}/>
+        <Modals isModalOpen={isModalOpen} openModal={openModal} tarefa={tarefa}/>
     </>
 }

@@ -26,9 +26,9 @@ export default function Container({setTarefas, excluiTarefa, excluiTodasTarefas,
             <ListaTarefas tarefas={tarefas} excluiTarefa={excluiTarefa} completaTarefa={completaTarefa} recuperaTarefa={recuperaTarefa}/>
         </div> 
         :
-        <div className={style.ContainerNotasExcluidas} onClick={() => excluiTodasTarefas()}>
+        <div className={style.ContainerNotasExcluidas}>
             <ListaTarefas tarefas={tarefasExcluidas} excluiTarefa={excluiTarefa} completaTarefa={completaTarefa} recuperaTarefa={recuperaTarefa}/>
-            <DeleteForeverIcon className={style.ContainerNotasExcluidasButton}/>
+            <DeleteForeverIcon className={style.ContainerNotasExcluidasButton} onClick={() => excluiTodasTarefas()}/>
         </div>}
     </div>
 }

@@ -36,3 +36,12 @@
     border-radius: 2px;
     padding: 5px;
 }
+
+@media screen and (max-width: 767px) {
+    .notaContainer{
+        width: 90%;
+        justify-self: baseline;
+        align-self: center;
+        margin-bottom: 1rem;
+    }
+  }

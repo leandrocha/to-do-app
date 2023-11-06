@@ -13,3 +13,16 @@
   font-size: 3rem;
   margin-right: 1rem;
 }
+
+@media screen and (max-width: 767px) {
+  .HeaderApp{
+    width: 100%;
+    padding: 0 0 1rem 1rem;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .HeaderAppTitulo{
+    margin-bottom: 1rem;
+  }
+}

@@ -9,3 +9,9 @@
     font-size: 0.9rem;
     font-weight: bold;
   }
+
+  @media screen and (max-width: 767px) {
+    .Filtros{
+      width: 100%;
+    }
+  }

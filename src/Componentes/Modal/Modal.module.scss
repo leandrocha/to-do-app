@@ -34,3 +34,9 @@
 .modalDetailsDescription{
     word-wrap: break-word;
 }
+
+@media screen and (max-width: 767px) {
+    .modal {
+        width: 90%;
+    }
+  }

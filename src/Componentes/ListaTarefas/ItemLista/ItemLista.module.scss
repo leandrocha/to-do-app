@@ -2,14 +2,6 @@
     background-color: #FDE5D4;
     border-radius: 5px;
     color: #445D48;
-    opacity: 1;
-    transition: opacity 0.5s;
-}
-
-.hidden {
-  opacity: 0;
-  transition: opacity 0.5s;
-  display: none;
 }
 
 .itemLista tr th {
@@ -22,7 +14,7 @@
 }
 
 .itemLista tr td, tr th {
-    padding: 0.5rem;
+    padding: 0.7rem;
 }
 
 .itemListaTituloDescricao{
@@ -41,4 +33,23 @@
 .fadeOut {
   opacity: 0;
   transition: opacity 0.5s;
+}
+
+.iconButton{
+  width: 68px;
+}
+
+.iconButton:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .itemLista {
+    width: 100%;
+  }
+
+  .itemListaTituloDescricao {
+    min-width: 0;
+    max-width: 0; 
+  }
 }
