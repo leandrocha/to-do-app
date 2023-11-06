@@ -25,33 +25,30 @@ export default function ItemLista({tarefa, excluiTarefa, completaTarefa, recuper
     };
 
     return <>    
-        <table className={style.itemLista}> 
-            <tr>
-                <th className={style.itemListaTitulo}>Data Final</th>
-                <th className={style.itemListaTitulo}>Descrição</th>
-            </tr>
-            <tr>
-                <td>{ formataData(tarefa.data) }</td>
-                <td className={style.itemListaTituloDescricao}>{ tarefa.descricao }</td>
-                <td><ArticleIcon onClick={openModal} className={style.iconButton}/></td>
-                <td onClick={() => completaTarefa(tarefa)}>
-                {
-                    !tarefa.completado ? 
-                    <UnpublishedIcon className={style.iconButton}/> : 
-                    <CheckCircleIcon color="primary" className={style.iconButton}/>
-                }
-                </td>
-                {tarefa.excluido ? 
-                <td onClick={() => recuperaTarefa(tarefa)}>
-                    <RestoreIcon className={style.iconButton}></RestoreIcon>
-                </td> 
-                :
-                <td onClick={() => excluiTarefa(tarefa)}>
-                    <DeleteIcon className={style.iconButton}/>
-                </td>
-                }
-            </tr>
-        </table>
+        <div className={style.item}> 
+            <p className={style.itemTitulo}>Data Final</p>
+            <p className={`${style.itemTitulo} ${style.itemTituloDescricao}`}>Descrição</p>
+
+            <p className={style.itemData}>{ formataData(tarefa.data) }</p>
+            <p className={style.itemDescricao}>{ tarefa.descricao }</p>
+            <ArticleIcon onClick={openModal} className={style.itemBotao}/>
+            <p onClick={() => completaTarefa(tarefa)} className={style.itemBotao}>
+            {
+                !tarefa.completado ? 
+                <UnpublishedIcon/> : 
+                <CheckCircleIcon color="primary"/>
+            }
+            </p>
+            {tarefa.excluido ? 
+            <p onClick={() => recuperaTarefa(tarefa)} className={style.itemBotao}>
+                <RestoreIcon/>
+            </p> 
+            :
+            <p onClick={() => excluiTarefa(tarefa)} className={style.itemBotao}>
+                <DeleteIcon/>
+            </p>
+            }
+        </div>
         <Modals isModalOpen={isModalOpen} openModal={openModal} tarefa={tarefa}/>
     </>
 }
